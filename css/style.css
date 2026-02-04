@@ -1,0 +1,91 @@
+  body { background:#f8f9fa; color:#0f172a; }
+
+  /* Packet bytes: นุ่มขึ้น + เงาเบา ๆ */
+  .byte-box {
+    width: 78px;
+    height: 78px;
+    border: 1px solid #dbe3ee;
+    border-radius: 12px;
+    text-align: center;
+    padding-top: 10px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    background: #ffffff;
+    box-shadow: 0 8px 18px rgba(15, 23, 42, .06);
+  }
+  .byte-value { font-size: 20px; font-weight: 900; color:#0d6efd; letter-spacing:1px; }
+  .byte-label { font-size: 11px; color: #64748b; font-weight: 700; margin-top: 6px; }
+
+  /* Raw */
+  pre { font-size: 13px; border-radius: 12px; }
+
+  /* ✅ สำคัญ: อย่าตัด overflow ของ table-responsive */
+  .table-responsive{
+    overflow-x: auto;     /* คงพฤติกรรมเดิมของ bootstrap */
+    overflow-y: visible;
+  }
+
+  table.crc-table {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 13px;
+  }
+
+  /* Header ให้ชัดขึ้น */
+  .table thead th{
+    font-size: 12px;
+    font-weight: 800;
+    color:#334155;
+    white-space: nowrap;
+  }
+  .table tbody tr:hover{
+    background:#f8fafc;
+  }
+  .table > :not(caption) > * > *{
+    padding: .55rem .6rem;
+    vertical-align: top;
+  }
+
+  .col-byte       { width: 55px; text-align: center; white-space: nowrap; font-weight:700; color:#334155; }
+  .col-input-hex  { width: 95px; text-align: center; white-space: nowrap; font-weight:800; }
+  .col-input-bin  { width: 140px; white-space: nowrap; color:#475569; }
+  .col-step       { min-width: 640px; }
+  .col-crc-bin    { min-width: 320px; letter-spacing: 1px; white-space: nowrap; }
+  .col-crc-hex    { width: 120px; min-width:120px; text-align: center; font-weight: 900; white-space: nowrap; }
+
+  /* Step layout: text left, binary right */
+  .step-wrap{
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 12px;
+    align-items: start;
+  }
+  .step-text{
+    font-weight: 800;
+    line-height: 1.25;
+    color:#0f172a;
+  }
+  .step-text .sub{
+    margin-top: 4px;
+    font-weight: 600;
+    color: #64748b;
+    font-size: 12px;
+  }
+  .bin-block{
+    margin: 0;
+    padding: 8px 10px;
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    font-size: 12px;
+    line-height: 1.25;
+    white-space: pre;
+    overflow-x: auto;
+  }
+  .bin-label{
+    width: 120px;
+    color:#334155;
+    font-weight: 800;
+  }
+  .bin-val{
+    letter-spacing: 1px;
+    color:#0f172a;
+  }
