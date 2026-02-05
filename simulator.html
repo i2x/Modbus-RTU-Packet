@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Modbus RTU Simulator</title>
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container mt-4">
+
+    <ul class="nav nav-tabs mb-4">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">Packet</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="simulator.html">Simulator</a>
+      </li>
+    </ul>
+
+    <h2 class="mb-1">Modbus RTU Simulator</h2>
+    <p class="text-muted mb-4">
+      Start Address: <b>00 = Voltage</b> · <b>32 = Frequency</b> · Coefficient = <b>0.001</b>
+    </p>
+
+    <!-- Inputs -->
+    <div class="row g-3 align-items-end">
+      <div class="col-md-3">
+        <label class="form-label">Slave</label>
+        <input id="slave" class="form-control" value="01">
+        <div class="form-text">Address (hex)</div>
+      </div>
+
+      <div class="col-md-3">
+        <label class="form-label">Start Address (hex, 2 digits)</label>
+        <input id="addr" class="form-control" value="00">
+        <div class="form-text">00 = Voltage, 32 = Frequency</div>
+      </div>
+
+      <div class="col-md-3">
+        <label class="form-label">Quantity (hex)</label>
+        <input id="qty" class="form-control" value="02">
+        <div class="form-text">2 registers → 4 bytes</div>
+      </div>
+
+      <div class="col-md-3">
+        <button class="btn btn-primary w-100" onclick="buildRequest()">Request</button>
+      </div>
+    </div>
+
+    <hr class="my-4">
+
+    <!-- REQUEST -->
+    <h4 class="mb-2">Request Packet</h4>
+    <div id="reqView" class="d-flex flex-wrap gap-2 mt-3"></div>
+    <pre id="reqRaw" class="bg-dark text-light p-3 rounded mt-2"></pre>
+
+    <hr class="my-4">
+
+    <!-- RESPONSE -->
+    <h4 class="mb-2">Response Packet (Simulated)</h4>
+    <div id="resView" class="d-flex flex-wrap gap-2 mt-3"></div>
+    <pre id="resRaw" class="bg-dark text-light p-3 rounded mt-2"></pre>
+
+    <!-- EXPLAIN -->
+    <div id="resultBox" class="alert alert-light border mt-4">
+      <div class="fw-semibold mb-2" id="resultTitle">How to decode (human-friendly)</div>
+      <pre class="mono m-0" id="explainOut"></pre>
+    </div>
+
+  </div>
+
+
+  <script src="js/request.js"></script>
+
+
+
+</body>
+</html>
